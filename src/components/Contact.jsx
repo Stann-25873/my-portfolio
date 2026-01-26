@@ -15,6 +15,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <footer className="footer">
+        <p>&copy; 2023 Ayamine Ikam. All rights reserved.</p>
+      </footer>
     </section>
   );
 };

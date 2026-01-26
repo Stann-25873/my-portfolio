@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Ayamine Ikam
+Contact: stanikam2@gmail.com
+Location: [Your Location]
+
+/* SITE */
+Last update: 2023/10/01
+Language: English
+Doctype: HTML5
+IDE: VS Code
