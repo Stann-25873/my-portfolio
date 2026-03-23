@@ -1,10 +1,10 @@
 /* TEAM */
-Developer: Ayamine Ikam
-Contact: stanikam2@gmail.com
-Location: [Your Location]
+Developer: Stann Ayamine Ikam Gaba
+Contact: stannayamineikam@gmail.com
+Location: Kigali, Rwanda
 
 /* SITE */
-Last update: 2023/10/01
+Last update: 2026/03/22
 Language: English
 Doctype: HTML5
-IDE: VS Code
+IDE: VS Code, IntelliJ IDEA

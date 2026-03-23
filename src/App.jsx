@@ -2,33 +2,36 @@ import { motion } from "framer-motion"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
+import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
-import "./App.css"
+import Footer from "./components/Footer"
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 50 },
+const sectionVariants = {
+  initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeInOut" },
-  viewport: { once: true }
+  transition: { duration: 0.7, ease: "easeOut" },
+  viewport: { once: true, margin: "-50px" },
 }
 
 export default function App() {
   return (
-    <>
+    <div className="min-h-screen bg-[#0a0a0f]">
       <Navbar />
-      <motion.div {...fadeInUp}>
-        <Hero />
-      </motion.div>
-      <motion.div {...fadeInUp}>
+      <Hero />
+      <motion.div {...sectionVariants}>
         <About />
       </motion.div>
-      <motion.div {...fadeInUp}>
+      <motion.div {...sectionVariants}>
+        <Skills />
+      </motion.div>
+      <motion.div {...sectionVariants}>
         <Projects />
       </motion.div>
-      <motion.div {...fadeInUp}>
+      <motion.div {...sectionVariants}>
         <Contact />
       </motion.div>
-    </>
+      <Footer />
+    </div>
   )
 }
