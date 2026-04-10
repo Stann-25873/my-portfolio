@@ -1,111 +1,95 @@
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion"
+
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="gradient-bg relative min-h-screen flex items-center overflow-hidden"
-    >
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl" />
-
-      <div className="max-w-6xl mx-auto px-6 w-full pt-24 pb-16">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
-          {/* Text content */}
-          <motion.div
-            className="flex-1 text-center md:text-left"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <p className="text-indigo-400 text-sm md:text-base font-medium mb-3 tracking-wider uppercase">
-              Hello, I'm
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-              Stann Ayamine{" "}
-              <span className="gradient-text">Ikam Gaba</span>
-            </h1>
-            <h2 className="text-xl sm:text-2xl text-gray-400 font-light mb-6">
-              Backend Developer &bull; Java &bull; Spring Boot
-            </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-lg mb-8 leading-relaxed">
-              Building robust systems, APIs, and management applications.
-              Passionate about software engineering, system architecture, and
-              cybersecurity.
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 font-medium transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Get in Touch
-              </a>
-              <a
-                href="/cv.pdf"
-                download
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-700 text-gray-300 hover:border-indigo-500/30 hover:text-indigo-400 font-medium transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download CV
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Profile image */}
-          <motion.div
-            className="flex-shrink-0"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 blur-2xl opacity-30 animate-float" />
-              <img
-                src="/profile.png"
-                alt="Stann Ayamine Ikam Gaba"
-                className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full object-cover border-2 border-indigo-500/30 glow"
-              />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="hidden md:flex justify-center mt-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
+    <section id="home" className="min-h-screen flex items-center py-28 px-6 overflow-hidden relative">
+      {/* Red blob decorative */}
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-600/20 rounded-full blob" />
+      
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+        {/* Text content */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center md:text-left"
         >
-          <a href="#about" className="flex flex-col items-center text-gray-500 hover:text-indigo-400 transition-colors">
-            <span className="text-xs mb-2">Scroll down</span>
-            <motion.svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+          <div className="inline-flex px-4 py-2 bg-white/80 border border-[#0A0A1B]/20 rounded-full shadow-sm mb-6 backdrop-blur-sm">
+            <span className="text-[#0A0A1B] font-medium text-sm tracking-wide">Hello 👋</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-[Poppins] leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#0A0A1B] to-[#E63946]/70">
+            Je suis Ayamine <span className="red-gradient-text">Ikam</span>
+          </h1>
+          
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0A0A1B] mb-8 font-[Inter]">
+            Architecte Backend & Développeur Fullstack
+          </h2>
+          
+          <p className="text-lg md:text-xl text-[#0A0A1B]/80 max-w-lg mb-12 leading-relaxed font-medium">
+            Basé au Rwanda, je construis des systèmes backend robustes et des applications fullstack innovantes.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#services"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#E63946] hover:bg-[#c8102e] text-white font-semibold text-lg rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 min-w-[200px] justify-center"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </motion.svg>
-          </a>
+              Mes services ↗
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/250723672942"
+              className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-[#0A0A1B] hover:bg-[#0A0A1B] hover:text-white text-[#0A0A1B] font-semibold text-lg rounded-full hover:shadow-xl hover:shadow-[#0A0A1B]/25 transition-all duration-300 min-w-[200px] justify-center"
+            >
+              Me contacter
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Profile image */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="justify-self-center md:justify-self-end"
+        >
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-br from-[#E63946]/20 to-transparent rounded-3xl blur-xl -z-10 group-hover:scale-105 transition-all duration-500" />
+            <img
+              src="/profile.png"
+              alt="Ayamine Ikam"
+              className="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-3xl object-cover shadow-2xl border-4 border-white/50 ring-4 ring-transparent group-hover:ring-[#E63946]/30 transition-all duration-500"
+            />
+          </div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center"
+      >
+        <a href="#about" className="flex flex-col items-center gap-2 text-[#0A0A1B]/60 hover:text-[#E63946] transition-colors">
+          <span className="text-xs font-medium tracking-wide uppercase">Scroll</span>
+          <div className="w-10 h-10 border border-[#0A0A1B]/30 rounded-full flex items-center justify-center p-2">
+            <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </a>
+      </motion.div>
     </section>
   )
 }
 
 export default Hero
+

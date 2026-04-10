@@ -1,64 +1,74 @@
+/* eslint-disable no-unused-vars */
+import { motion } from "framer-motion"
+
+
 const About = () => {
   const highlights = [
-    { label: "Nationality", value: "Gabonese" },
-    { label: "Location", value: "Kigali, Rwanda" },
-    { label: "Focus", value: "Backend Development" },
-    { label: "Primary Language", value: "Java" },
+    { label: "Nationalité", value: "Gabonais" },
+    { label: "Localisation", value: "Kigali, Rwanda" },
+    { label: "Focus", value: "Backend Engineering" },
+    { label: "Langage Principal", value: "Java" },
   ]
 
   return (
-    <section id="about" className="py-20 md:py-28 relative">
-      <div className="absolute top-0 left-1/2 w-64 h-64 bg-indigo-600/5 rounded-full blur-3xl -translate-x-1/2" />
-
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="text-center mb-14">
-          <p className="text-indigo-400 text-sm font-medium tracking-wider uppercase mb-2">
-            Get to know me
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            About Me
+    <section id="about" className="py-28 relative">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div 
+          className="text-center mb-24"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-6xl font-black font-[Poppins] text-[#0A0A1B] mb-6">
+            À Propos
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto mt-4 rounded-full" />
-        </div>
+          <div className="w-24 h-1 bg-[#E63946] mx-auto rounded-full" />
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-          <div className="space-y-5">
-            <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-              I am a backend developer with strong knowledge in{" "}
-              <span className="text-indigo-400 font-medium">Java</span> and{" "}
-              <span className="text-indigo-400 font-medium">Spring Boot</span>.
-              I enjoy building systems, APIs, and management applications that
-              solve real-world problems.
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <p className="text-xl text-[#0A0A1B]/80 leading-relaxed font-medium">
+              Software Engineer spécialisé Backend basé au Rwanda. Passionné par la construction de systèmes scalables, APIs performantes et applications de gestion.
             </p>
-            <p className="text-gray-400 leading-relaxed">
-              I am very curious — I like learning new technologies,
-              cybersecurity, system architecture, and software engineering. My
-              goal is to continuously grow and contribute to meaningful projects
-              that push boundaries.
+            <p className="text-lg text-[#0A0A1B]/70 leading-relaxed">
+              Curieux et autodidacte, j&apos;explore continuellement les technologies backend (Java, Spring Boot), DevOps et cybersécurité. 
+              Mon objectif : contribuer à des projets impactants qui repoussent les limites techniques.
             </p>
-            <p className="text-gray-400 leading-relaxed">
-              I am open to opportunities, collaborations, and challenging
-              projects that help me grow as a developer. Whether it's building
-              robust APIs, architecting database systems, or exploring
-              cybersecurity, I'm always ready to learn and build.
+            <p className="text-lg text-[#0A0A1B]/70 leading-relaxed">
+              Ouvert aux opportunités internationales, collaborations et challenges techniques. 
+              Contactez-moi pour bâtir l&apos;avenir ensemble !
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {highlights.map((item) => (
-              <div
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 gap-6"
+          >
+            {highlights.map((item, i) => (
+              <motion.div
                 key={item.label}
-                className="glass rounded-xl p-5 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-8 bg-white/70 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-red-500/10 border border-white/50 hover:border-red-500/30 hover:-translate-y-2 transition-all duration-500 cursor-default"
               >
-                <p className="text-indigo-400 text-xs font-medium tracking-wider uppercase mb-1">
+                <p className="text-[#E63946] text-sm font-bold uppercase tracking-wide mb-3 group-hover:scale-105 transition-transform">
                   {item.label}
                 </p>
-                <p className="text-white font-semibold text-sm">
+                <p className="text-2xl font-black text-[#0A0A1B] group-hover:text-[#E63946] transition-colors">
                   {item.value}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -66,3 +76,4 @@ const About = () => {
 }
 
 export default About
+
